@@ -32,6 +32,11 @@
   <div class="wrap">
 
     <form class="card" id="order-form">
+      <input type="hidden" name="access_key" value="e384e23a-598d-4720-8d06-75215b1aa477">
+      <input type="hidden" name="subject" value="New Research Integrity Check request">
+      <input type="hidden" name="from_name" value="ResearchIntegrity website">
+      <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+
       <div class="field">
         <label for="product">Package</label>
         <select id="product" name="product" required>
@@ -82,12 +87,14 @@
         <label for="agree" style="font-weight:400;">I understand this service identifies similarity, AI-writing and citation issues to help me improve my submission, and does not guarantee detection or acceptance outcomes. I've read the <a href="privacy.html">privacy policy</a>.</label>
       </div>
 
-      <button type="submit" class="btn btn-primary" style="width:100%;">Send request</button>
+      <button type="submit" class="btn btn-primary" style="width:100%;" id="order-submit">Send request</button>
 
       <div id="order-confirm" hidden style="margin-top:18px;" class="notice blue">
-        Thanks &mdash; your email app should open with your request pre-filled. If it doesn't, email us directly at
-        <a href="mailto:work.researchintegrity@gmail.com">work.researchintegrity@gmail.com</a>.
-        We'll reply with secure upload and payment instructions.
+        Thanks &mdash; your request has been sent. We'll reply with secure upload and payment instructions.
+      </div>
+      <div id="order-error" hidden style="margin-top:18px;" class="notice">
+        Something went wrong sending your request. Please email us directly at
+        <a href="mailto:work.researchintegrity@gmail.com">work.researchintegrity@gmail.com</a> instead.
       </div>
     </form>
 

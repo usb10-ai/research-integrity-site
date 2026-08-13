@@ -7,46 +7,51 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Order form: no payment gateway is wired up yet (TODO once Razorpay/Stripe is chosen).
-  // For now this builds a summary and opens a pre-filled email to the business inbox so
-  // Phase 1 (manual processing) can begin: https://example.com plan calls this "simple
-  // upload/payment/report workflow" — payment + document handoff happens by email/call
-  // until a real gateway + upload backend is wired up.
+  // Order form: submits to Web3Forms (https://web3forms.com), which forwards the
+  // submission straight to work.researchintegrity@gmail.com. No backend of our own
+  // needed. Requires a real access_key in order.html (see hidden input) — get one
+  // free at web3forms.com using the same inbox.
   var orderForm = document.getElementById("order-form");
   if (orderForm) {
     orderForm.addEventListener("submit", function (e) {
       e.preventDefault();
-      var data = new FormData(orderForm);
-      var product = data.get("product");
-      var name = data.get("name");
-      var email = data.get("email");
-      var phone = data.get("phone");
-      var institution = data.get("institution");
-      var wordCount = data.get("wordcount");
-      var notes = data.get("notes");
-
-      var subject = "Research Integrity Check request - " + product;
-      var body =
-        "Product: " + product + "\n" +
-        "Name: " + name + "\n" +
-        "Email: " + email + "\n" +
-        "Phone: " + phone + "\n" +
-        "Institution: " + institution + "\n" +
-        "Approx. word count: " + wordCount + "\n" +
-        "Notes: " + notes + "\n\n" +
-        "(Document will be shared securely after payment instructions are confirmed.)";
-
-      var mailto =
-        "mailto:work.researchintegrity@gmail.com" +
-        "?subject=" + encodeURIComponent(subject) +
-        "&body=" + encodeURIComponent(body);
 
       var confirmBox = document.getElementById("order-confirm");
-      if (confirmBox) {
-        confirmBox.hidden = false;
-        confirmBox.scrollIntoView({ behavior: "smooth", block: "center" });
-      }
-      window.location.href = mailto;
+      var errorBox = document.getElementById("order-error");
+      var submitBtn = document.getElementById("order-submit");
+      if (confirmBox) confirmBox.hidden = true;
+      if (errorBox) errorBox.hidden = true;
+      if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = "Sending..."; }
+
+      var data = new FormData(orderForm);
+
+      fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: data
+      })
+        .then(function (res) { return res.json(); })
+        .then(function (result) {
+          if (result.success) {
+            orderForm.reset();
+            if (confirmBox) {
+              confirmBox.hidden = false;
+              confirmBox.scrollIntoView({ behavior: "smooth", block: "center" });
+            }
+          } else if (errorBox) {
+            errorBox.hidden = false;
+            errorBox.scrollIntoView({ behavior: "smooth", block: "center" });
+          }
+        })
+        .catch(function () {
+          if (errorBox) {
+            errorBox.hidden = false;
+            errorBox.scrollIntoView({ behavior: "smooth", block: "center" });
+          }
+        })
+        .finally(function () {
+          if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = "Send request"; }
+        });
     });
   }
 });
