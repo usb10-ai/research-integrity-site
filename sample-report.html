@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sample Report &mdash; ResearchIntegrity</title>
+<meta name="description" content="See what a Research Integrity Check report looks like before you order.">
+<link rel="stylesheet" href="assets/style.css">
+<style>
+  .report-mock{background:#fff;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;}
+  .report-mock .rhead{background:var(--navy);color:#fff;padding:22px 28px;}
+  .report-mock .rhead .tag{font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;color:#9fd8d2;font-weight:700;}
+  .report-mock .rhead h3{margin:6px 0 4px;font-size:1.3rem;}
+  .report-mock .rhead .meta{font-size:.85rem;color:#c9d5e6;}
+  .rbody{padding:28px;}
+  .score-row{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:28px;}
+  @media (max-width:700px){.score-row{grid-template-columns:1fr;}}
+  .score-box{border:1px solid var(--border);border-radius:8px;padding:18px;text-align:center;}
+  .score-box .num{font-size:2rem;font-weight:800;color:var(--navy);}
+  .score-box .num.warn{color:var(--amber);}
+  .score-box .num.ok{color:var(--teal-dark);}
+  .score-box .label{font-size:.82rem;color:var(--ink-soft);margin-top:4px;}
+  .rsection{margin-bottom:26px;}
+  .rsection h4{font-size:.95rem;margin:0 0 12px;color:var(--navy);border-bottom:1px solid var(--border);padding-bottom:8px;}
+  table.source-table{width:100%;border-collapse:collapse;font-size:.86rem;}
+  table.source-table th,table.source-table td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--border);}
+  table.source-table th{color:var(--ink-soft);font-weight:600;font-size:.78rem;text-transform:uppercase;}
+  .flag{display:inline-block;padding:2px 9px;border-radius:999px;font-size:.74rem;font-weight:700;}
+  .flag.high{background:#fde2e1;color:#a3261f;}
+  .flag.med{background:var(--amber-bg);color:#6b5108;}
+  .flag.low{background:#e3f3f0;color:var(--teal-dark);}
+  .findings-list{margin:0;padding-left:20px;font-size:.9rem;}
+  .findings-list li{margin-bottom:10px;}
+  .redact{background:repeating-linear-gradient(45deg,#e3e7ec,#e3e7ec 4px,#eef1f4 4px,#eef1f4 8px);color:transparent;border-radius:3px;padding:0 4px;user-select:none;}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a href="index.html" class="brand"><span class="mark">RI</span> ResearchIntegrity <span class="domain-note">researchintegrity.in &mdash; coming soon</span></a>
+    <nav class="main">
+      <a href="index.html">Home</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="how-it-works.html">How it works</a>
+      <a href="order.html">Get Started</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <h1>Sample Report</h1>
+    <p>A mock-up of what you receive with the Research Integrity Check &mdash; see it before you order.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="notice blue" style="margin-bottom:28px;">
+      <strong>This is an illustrative sample, not a real customer submission.</strong> Document name, sources and figures below are fabricated to show the report's structure and level of detail. Your actual report is generated from your own document and reviewed by our team before it's sent to you.
+    </div>
+
+    <div class="report-mock">
+      <div class="rhead">
+        <div class="tag">Research Integrity Check</div>
+        <h3>Report for: <span class="redact">Sample_Manuscript_Draft.docx</span></h3>
+        <div class="meta">Word count: 9,420 &bull; Package: Research Integrity Check (&#8377;999) &bull; Generated: illustrative example</div>
+      </div>
+      <div class="rbody">
+
+        <div class="score-row">
+          <div class="score-box">
+            <div class="num warn">14%</div>
+            <div class="label">Overall similarity</div>
+          </div>
+          <div class="score-box">
+            <div class="num ok">Low indicators</div>
+            <div class="label">AI-writing assessment</div>
+          </div>
+          <div class="score-box">
+            <div class="num warn">3 issues</div>
+            <div class="label">Citation &amp; reference check</div>
+          </div>
+        </div>
+
+        <div class="rsection">
+          <h4>Similarity &mdash; source-wise matching</h4>
+          <table class="source-table">
+            <thead><tr><th>Source</th><th>Match</th><th>Section</th><th>Risk</th></tr></thead>
+            <tbody>
+              <tr><td class="redact">Journal of Applied XX, 2019</td><td>6.1%</td><td>Introduction, para 2&ndash;3</td><td><span class="flag med">Review</span></td></tr>
+              <tr><td class="redact">Prior thesis, XX University repository</td><td>4.8%</td><td>Literature Review</td><td><span class="flag high">Reword</span></td></tr>
+              <tr><td class="redact">Standard methodology description</td><td>3.1%</td><td>Methods, para 1</td><td><span class="flag low">Common phrasing</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="rsection">
+          <h4>AI-writing assessment</h4>
+          <p style="font-size:.9rem;color:var(--ink-soft);margin:0 0 10px;">Indicators of AI-generated text were low across most sections, with one section flagged for human review. This is not a determination of authorship &mdash; see our <a href="terms.html">terms</a> for how to interpret this.</p>
+          <ul class="findings-list">
+            <li><strong>Discussion, para 4:</strong> Some phrasing patterns consistent with AI-assisted drafting &mdash; flagged for your own review, not a conclusive finding.</li>
+          </ul>
+        </div>
+
+        <div class="rsection">
+          <h4>Citation &amp; reference check</h4>
+          <ul class="findings-list">
+            <li><strong>Duplicate reference:</strong> <span class="redact">Smith et al., 2020</span> appears twice in your reference list with inconsistent formatting.</li>
+            <li><strong>Unmatched citation:</strong> In-text citation <span class="redact">(Kumar, 2021)</span> has no corresponding entry in the reference list.</li>
+            <li><strong>DOI mismatch:</strong> One reference's DOI resolves to a different paper than the one cited &mdash; please verify.</li>
+          </ul>
+        </div>
+
+        <div class="rsection">
+          <h4>Recommendations</h4>
+          <ul class="findings-list">
+            <li>Reword the flagged Literature Review section in your own words before submission.</li>
+            <li>Fix the duplicate and unmatched references listed above.</li>
+            <li>Review the flagged Discussion paragraph and revise if it doesn't reflect your own drafting process.</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <p class="center" style="margin-top:32px;">
+      <a href="order.html" class="btn btn-primary">Get your own Research Integrity Check &mdash; &#8377;999</a>
+    </p>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <h4>ResearchIntegrity</h4>
+        <p style="font-size:.88rem;max-width:32ch;">Similarity, AI-writing and citation checks to help you submit with confidence &mdash; not to make anything "undetectable".</p>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="how-it-works.html">How it works</a></li>
+          <li><a href="sample-report.html">Sample report</a></li>
+          <li><a href="order.html">Get started</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="privacy.html">Privacy &amp; confidentiality</a></li>
+          <li><a href="refund-policy.html">Refund policy</a></li>
+          <li><a href="terms.html">Terms of service</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:work.researchintegrity@gmail.com">Email us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="bottom">
+      <span>&copy; 2026 ResearchIntegrity. All rights reserved.</span>
+      <span>Reports support submission readiness; they do not guarantee acceptance or detection outcomes.</span>
+    </div>
+  </div>
+</footer>
+<script src="assets/script.js"></script>
+</body>
+</html>
