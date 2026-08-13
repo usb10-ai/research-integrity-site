@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Get Started &mdash; ResearchIntegrity</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a href="index.html" class="brand"><span class="mark">RI</span> ResearchIntegrity</a>
+    <nav class="main">
+      <a href="index.html">Home</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="how-it-works.html">How it works</a>
+      <a href="order.html" class="current">Get Started</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <h1>Get Started</h1>
+    <p>Tell us about your document. We'll reply with secure upload and payment instructions &mdash; no documents or payment details are collected on this page.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+
+    <form class="card" id="order-form">
+      <div class="field">
+        <label for="product">Package</label>
+        <select id="product" name="product" required>
+          <option value="Similarity Check (₹499)">Similarity Check &mdash; &#8377;499 (10,000 words)</option>
+          <option value="AI + Similarity (₹799)">AI + Similarity &mdash; &#8377;799 (10,000 words)</option>
+          <option value="Research Integrity Check (₹999)" selected>Research Integrity Check &mdash; &#8377;999 (10,000 words)</option>
+          <option value="Journal Ready (₹1,999)">Journal Ready &mdash; &#8377;1,999 (20,000 words)</option>
+          <option value="PhD Thesis (₹4,999)">PhD Thesis &mdash; &#8377;4,999 (100,000 words)</option>
+          <option value="Not sure / custom">Not sure &mdash; help me choose</option>
+        </select>
+      </div>
+
+      <div class="field-row">
+        <div class="field">
+          <label for="name">Full name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+      </div>
+
+      <div class="field-row">
+        <div class="field">
+          <label for="phone">Phone / WhatsApp</label>
+          <input type="tel" id="phone" name="phone">
+        </div>
+        <div class="field">
+          <label for="institution">Institution</label>
+          <input type="text" id="institution" name="institution">
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="wordcount">Approximate word count</label>
+        <input type="text" id="wordcount" name="wordcount" placeholder="e.g. 8,500 words">
+      </div>
+
+      <div class="field">
+        <label for="notes">Anything we should know?</label>
+        <textarea id="notes" name="notes" rows="4" placeholder="Document type (thesis chapter, journal paper, assignment...), deadline, target journal, etc."></textarea>
+        <div class="hint">Please don't paste your manuscript text here &mdash; we'll send you a secure upload link.</div>
+      </div>
+
+      <div class="field checkbox-field">
+        <input type="checkbox" id="agree" name="agree" required>
+        <label for="agree" style="font-weight:400;">I understand this service identifies similarity, AI-writing and citation issues to help me improve my submission, and does not guarantee detection or acceptance outcomes. I've read the <a href="privacy.html">privacy policy</a>.</label>
+      </div>
+
+      <button type="submit" class="btn btn-primary" style="width:100%;">Send request</button>
+
+      <div id="order-confirm" hidden style="margin-top:18px;" class="notice blue">
+        Thanks &mdash; your email app should open with your request pre-filled. If it doesn't, email us directly at
+        <a href="mailto:work.researchintegrity@gmail.com">work.researchintegrity@gmail.com</a>.
+        We'll reply with secure upload and payment instructions.
+      </div>
+    </form>
+
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="notice">
+      <strong>Payment isn't collected on this site yet.</strong> We're finalizing a payment gateway. For now, submitting this form sends us your request by email and we'll confirm payment and document handoff directly with you.
+    </div>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <h4>ResearchIntegrity</h4>
+        <p style="font-size:.88rem;max-width:32ch;">Similarity, AI-writing and citation checks to help you submit with confidence &mdash; not to make anything "undetectable".</p>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="how-it-works.html">How it works</a></li>
+          <li><a href="order.html">Get started</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="privacy.html">Privacy &amp; confidentiality</a></li>
+          <li><a href="refund-policy.html">Refund policy</a></li>
+          <li><a href="terms.html">Terms of service</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:work.researchintegrity@gmail.com">Email us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="bottom">
+      <span>&copy; 2026 ResearchIntegrity. All rights reserved.</span>
+      <span>Reports support submission readiness; they do not guarantee acceptance or detection outcomes.</span>
+    </div>
+  </div>
+</footer>
+<script src="assets/script.js"></script>
+<script>
+  (function () {
+    var params = new URLSearchParams(window.location.search);
+    var product = params.get("product");
+    if (product) {
+      var select = document.getElementById("product");
+      for (var i = 0; i < select.options.length; i++) {
+        if (select.options[i].value.indexOf(product) === 0 || select.options[i].value.indexOf(product) !== -1) {
+          select.selectedIndex = i;
+          break;
+        }
+      }
+    }
+  })();
+</script>
+</body>
+</html>
