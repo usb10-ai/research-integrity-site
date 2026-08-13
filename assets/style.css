@@ -251,6 +251,11 @@ form.card{max-width:640px;margin:0 auto;}
 .checkbox-field{display:flex;align-items:flex-start;gap:10px;font-size:.86rem;color:var(--ink-soft);}
 .checkbox-field input{width:auto;margin-top:3px;}
 
+.addon-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px 20px;padding:14px 16px;border:1px solid var(--border);border-radius:8px;background:#fafbfc;}
+.addon-grid .checkbox-field{cursor:pointer;}
+.addon-grid .checkbox-field span.price{color:var(--navy);font-weight:600;white-space:nowrap;}
+@media (max-width:560px){.addon-grid{grid-template-columns:1fr;}}
+
 /* Footer */
 footer.site{background:var(--navy-dark);color:#aab8ca;padding:48px 0 28px;margin-top:40px;}
 footer.site .cols{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:32px;margin-bottom:32px;}
