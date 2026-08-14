@@ -192,6 +192,17 @@ section.alt{background:var(--card);border-top:1px solid var(--border);border-bot
 .price-card h3{margin:6px 0 4px;font-size:1.02rem;}
 .price-card .amount{font-size:1.7rem;font-weight:800;color:var(--navy);margin:6px 0;}
 .price-card .amount span{font-size:.85rem;font-weight:500;color:var(--ink-soft);}
+.orig-price{text-decoration:line-through;font-size:1rem;font-weight:500;color:var(--ink-soft);margin-right:8px;}
+.discount-badge{
+  position:absolute;top:-12px;right:16px;
+  background:#c0392b;color:#fff;font-size:.72rem;font-weight:700;
+  padding:4px 10px;border-radius:999px;letter-spacing:.02em;
+}
+.discount-strip{
+  background:#fdeceb;border:1px solid #f3c9c6;border-left:4px solid #c0392b;
+  border-radius:8px;padding:14px 18px;font-size:.92rem;color:#7a241d;margin-bottom:28px;
+}
+.discount-strip strong{color:#5c1b16;}
 .price-card .limit{font-size:.85rem;color:var(--ink-soft);margin-bottom:14px;}
 .price-card ul{list-style:none;margin:0 0 18px;padding:0;font-size:.86rem;color:var(--ink);flex-grow:1;}
 .price-card li{padding-left:20px;position:relative;margin-bottom:8px;}
