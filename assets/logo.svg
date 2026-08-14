@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="riGrad" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1f8a82"/>
+      <stop offset="1" stop-color="#2f5fa8"/>
+    </linearGradient>
+  </defs>
+  <path d="M32 3 L58 13 V29 C58 47 47 58 32 61 C17 58 6 47 6 29 V13 Z" fill="url(#riGrad)"/>
+  <path d="M19 32 L28 41 L46 21" fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

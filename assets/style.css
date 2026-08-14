@@ -66,10 +66,9 @@ header.site .wrap{
 }
 @media (max-width:900px){.domain-note{display:none;}}
 .brand .mark{
-  width:34px;height:34px;border-radius:8px;
-  background:linear-gradient(135deg,var(--teal),var(--blue));
-  display:flex;align-items:center;justify-content:center;
-  font-size:1rem;font-weight:800;color:#fff;
+  width:34px;height:34px;
+  display:block;
+  flex-shrink:0;
 }
 nav.main{display:flex;gap:26px;align-items:center;}
 nav.main a{color:#dbe4f0;font-weight:500;font-size:.95rem;}
